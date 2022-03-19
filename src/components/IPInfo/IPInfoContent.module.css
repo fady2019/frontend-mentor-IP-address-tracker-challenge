@@ -1,0 +1,74 @@
+.ip-info-content {
+  display: flex;
+  gap: 25px;
+  position: absolute;
+  top: -70px;
+  left: 50%;
+  border-radius: 12px;
+  padding: 40px 30px;
+  margin: 0;
+  background-color: #fff;
+  list-style: none;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px -2px var(--dark-gray);
+  z-index: 1;
+}
+
+.ip-info-content li {
+  position: relative;
+  padding-right: 40px;
+}
+
+.ip-info-content li span {
+  display: block;
+}
+
+.ip-info-content li span:first-child {
+  color: var(--dark-gray);
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+
+.ip-info-content li span:last-child {
+  color: var(--very-dark-gray);
+  font-weight: 500;
+  font-size: 26px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+@media screen and (min-width: 901px) {
+  .ip-info-content {
+    width: 90%;
+    max-width: 1400px;
+  }
+
+  .ip-info-content li {
+    width: 25%;
+  }
+
+  .ip-info-content li:not(:last-of-type)::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background-color: var(--dark-gray);
+    opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .ip-info-content {
+    flex-direction: column;
+    width: calc(85% - 40px);
+    text-align: center;
+    top: -170px;
+  }
+}

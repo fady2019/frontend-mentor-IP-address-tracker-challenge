@@ -1,0 +1,11 @@
+.main {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+}
+
+.spinner {
+  margin-top: 50px;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}

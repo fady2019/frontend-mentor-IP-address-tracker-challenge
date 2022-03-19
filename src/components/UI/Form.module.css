@@ -1,0 +1,44 @@
+.form {
+  --form-width: 500px;
+  max-width: var(--form-width);
+  margin-left: calc(50% - calc(var(--form-width) / 2));
+}
+
+.input {
+  overflow: hidden;
+  display: flex;
+  height: 50px;
+  border-radius: 15px;
+}
+
+.input input,
+.input button {
+  height: 100%;
+  padding: 10px 25px;
+}
+
+.input input {
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.input button {
+  border: none;
+  min-width: 50px;
+  background-image: url(../../assets/icon-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--very-dark-gray);
+  cursor: pointer;
+}
+
+.input button:hover {
+  background-color: var(--dark-gray);
+}
+
+@media screen and (max-width: 650px) {
+  .form {
+    --form-width: 85%;
+  }
+}
