@@ -8,6 +8,8 @@ const IPInfoContent = props => {
   const infoRef = useRef();
 
   const windowScrollHandler = () => {
+    if (!infoRef || !infoRef.current) return;
+
     const pos = infoRef.current.getBoundingClientRect();
     const top = pos.top;
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useCallback, useEffect } from 'react';
 
 import useHttp from '../../hooks/use-http';
 
@@ -17,9 +17,16 @@ const Header = () => {
 
   const storeDispatch = useDispatch();
 
+  const trackIPAddressHandler = useCallback(
+    ip => {
+      request(urlBase + ip);
+    },
+    [request]
+  );
+
   useEffect(() => {
     trackIPAddressHandler('');
-  }, []);
+  }, [trackIPAddressHandler]);
 
   useEffect(() => {
     if (response) {
@@ -33,11 +40,7 @@ const Header = () => {
         },
       });
     }
-  }, [response, isLoading]);
-
-  const trackIPAddressHandler = ip => {
-    request(urlBase + ip);
-  };
+  }, [storeDispatch, response, isLoading]);
 
   return (
     <Fragment>
